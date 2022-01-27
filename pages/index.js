@@ -19,6 +19,14 @@ export default function Home() {
             <a>this page!</a>
           </Link>
         </h1>
+        <div>
+          <Image className={styles.profileImage}
+              src="/images/githubProfile.jpg" // Route of the image file
+              height={144} // Desired size with correct aspect ratio
+              width={144} // Desired size with correct aspect ratio
+              alt="Your Name"
+              />
+        </div>
 
         <p className={styles.description}>
           Get started by editing{' '}
