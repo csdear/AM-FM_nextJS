@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/Layout'
+import Alert from '../components/Alert'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
@@ -55,6 +56,10 @@ export default function Home() {
           </a>
         </div>
       </section>
+    <Alert type='error'> 
+      <h2>Please try again</h2>
+      <p>An error has occured</p>  
+    </Alert>
     </Layout>
   )
 }

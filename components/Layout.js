@@ -8,6 +8,7 @@ const name = 'Stuart Dear'
 export const siteTitle = '|Next.js Sample Website|'
 
 export default function Layout({ children, home }) {
+  console.log('home?', home)
   return (
     <div className={styles.container}>
       <Head>
