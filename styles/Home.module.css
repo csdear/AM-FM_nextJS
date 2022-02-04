@@ -67,6 +67,8 @@
 
 .grid {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
 }
@@ -114,4 +116,8 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.btn__active {
+  background-color: blue;
 }

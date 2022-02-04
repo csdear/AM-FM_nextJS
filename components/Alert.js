@@ -16,7 +16,9 @@ export default function Alert({ children, type }) {
         [styles.error]: type === 'error'
     })}
     >
+
     {children}
+    <p>im in component</p>
     </div>
 )
 }

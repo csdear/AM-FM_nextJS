@@ -4,8 +4,16 @@ import Alert from '../components/Alert'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import cn from 'classnames'
+import React, { useState } from 'react'
 
 export default function Home() {
+  const [isActive, setActive] = useState(false);
+  const buttonClasses = cn({
+        "btn": true,
+        "btn__active": isActive,
+        [styles.btn__active]: isActive,
+})
   return (
     <Layout home>
       <Head>
@@ -56,10 +64,13 @@ export default function Home() {
           </a>
         </div>
       </section>
-    <Alert type='error'> 
+    <Alert type='error'>
       <h2>Please try again</h2>
-      <p>An error has occured</p>  
+      <p>An error has occured</p>
     </Alert>
+
+    <button className={buttonClasses} onClick={() => setActive(!isActive)}>Make me active</button>
+
     </Layout>
   )
 }
