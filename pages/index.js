@@ -6,8 +6,19 @@ import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import cn from 'classnames'
 import React, { useState } from 'react'
+import { getSortedPostsData } from '../lib/posts'
 
-export default function Home() {
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData()
+  return {
+    props: {
+      allPostsData
+    }
+  }
+}
+
+export default function Home({ allPostsData }) {
+  console.log(`allPostsData ${JSON.stringify(allPostsData, null, 4)}`)
   const [isActive, setActive] = useState(false);
   const buttonClasses = cn({
         "btn": true,
@@ -26,7 +37,23 @@ export default function Home() {
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
       </section>
+      {/* getStaticProps::blog */}
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+          <h2 className={utilStyles.headingLg}>Blog</h2>
+          <ul className={utilStyles.list}>
+            {allPostsData.map(({ id, date, title }) => (
+              <li className={utilStyles.listItem} key={id}>
+                {title}
+                <br />
+                {id}
+                <br />
+                {date}
+              </li>
+            ))}
+          </ul>
+        </section>
       <section>
+      {/* For Keeps... I like the look of the grid. should componentize it though -- csd */}
       <div className={styles.grid}>
         <Link href="/posts/first-post">
         <a className={styles.card}>
