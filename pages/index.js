@@ -3,6 +3,7 @@ import Layout, { siteTitle } from '../components/Layout'
 import Alert from '../components/Alert'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import Date from '../components/Date'
 import styles from '../styles/Home.module.css'
 import cn from 'classnames'
 import React, { useState } from 'react'
@@ -30,6 +31,7 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
+
       <section className={utilStyles.headingMd}>
         <p>Hello, I am Stuart Dear, Full Stack Software Engineer</p>
         <p>
@@ -37,17 +39,20 @@ export default function Home({ allPostsData }) {
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
       </section>
+
       {/* getStaticProps::blog */}
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
           <h2 className={utilStyles.headingLg}>Blog</h2>
           <ul className={utilStyles.list}>
             {allPostsData.map(({ id, date, title }) => (
               <li className={utilStyles.listItem} key={id}>
-                {title}
+                <Link href={`/posts/${id}`}>
+                  <a>{title}</a>
+                </Link>
                 <br />
-                {id}
-                <br />
-                {date}
+                <small className={utilStyles.lightText}>
+                  <Date dateString={date} />
+                </small>
               </li>
             ))}
           </ul>
@@ -55,7 +60,7 @@ export default function Home({ allPostsData }) {
       <section>
       {/* For Keeps... I like the look of the grid. should componentize it though -- csd */}
       <div className={styles.grid}>
-        <Link href="/posts/first-post">
+        <Link href="/posts/first-post-deprecated">
         <a className={styles.card}>
         <h2>My First Post &rarr;</h2>
           <p>This ia link to my first post</p>

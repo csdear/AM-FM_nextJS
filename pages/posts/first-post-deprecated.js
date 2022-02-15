@@ -16,7 +16,7 @@ export default function FirstPost() {
           console.log(`script loaded correctly, window.FB has been populated`)
         }
       />
-      <h1>First Post</h1>
+      <h1>First Post // this is actually just a good example of a PAGE</h1>
       <h2>
         <Link href="/">
           <a>Back to home</a>
