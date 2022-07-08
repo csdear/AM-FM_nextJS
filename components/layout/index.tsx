@@ -1,13 +1,19 @@
-import styles from '../styles/Layout.module.css'
+import React, { FC, ReactNode} from 'react';
+import styles from '../../styles/Layout.module.css'
 import Head from 'next/head'
 import Image from 'next/image'
-import utilStyles from '../styles/utils.module.css'
+import utilStyles from '../../styles/utils.module.css'
 import Link from 'next/link'
 
 const name = 'Stuart Dear'
 export const siteTitle = '|Next.js Sample Website|'
 
-export default function Layout({ children, home }) {
+interface LayoutProps {
+  children: ReactNode,
+  home: boolean
+}
+
+const Layout: FC<LayoutProps> = ({ children, home }) => {
   console.log('home?', home)
   return (
     <div className={styles.container}>
@@ -72,3 +78,5 @@ export default function Layout({ children, home }) {
     </div>
   )
 }
+
+export default Layout;
