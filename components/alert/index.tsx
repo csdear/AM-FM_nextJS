@@ -1,5 +1,5 @@
 import React, {FC, ReactNode } from 'react';
-import styles from '../../styles/alert.module.css'
+import styles from './alert.module.scss'
 import cn from 'classnames'
 
 interface AlertProps {

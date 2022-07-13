@@ -1,8 +1,8 @@
 import React, { FC, ReactNode} from 'react';
-import styles from '../../styles/Layout.module.css'
+import styles from './layout.module.scss'
 import Head from 'next/head'
 import Image from 'next/image'
-import utilStyles from '../../styles/utils.module.css'
+import utilStyles from '../../styles/utils.module.scss'
 import Link from 'next/link'
 
 const name = 'Stuart Dear'
@@ -16,7 +16,8 @@ interface LayoutProps {
 const Layout: FC<LayoutProps> = ({ children, home }) => {
   console.log('home?', home)
   return (
-    <div className={styles.container}>
+    <div className={styles["layout"]}>
+    <div className={styles["layout__container"]}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -32,7 +33,8 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      {/** What header to render is determined by `home` ternary */}
+      <header className={styles["layout__header"]}>
         {home ? (
           <>
             <Image
@@ -69,12 +71,13 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
       </header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div className={styles["layout__backToHome"]}>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
         </div>
       )}
+    </div>
     </div>
   )
 }
