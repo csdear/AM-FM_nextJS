@@ -57,8 +57,8 @@ export default function Home({ allPostsData }) {
             ))}
           </ul>
         </section>
-      <section>
-      {/* For Keeps... I like the look of the grid. should componentize it though -- csd */}
+      
+      {/* <section>
       <div className={styles.grid}>
         <Link href="/posts/first-post-deprecated">
         <a className={styles.card}>
@@ -95,13 +95,12 @@ export default function Home({ allPostsData }) {
             </p>
           </a>
         </div>
-      </section>
-    <Alert type='error'>
+      </section> */}
+    {/* <Alert type='error'>
       <h2>Please try again</h2>
       <p>An error has occured</p>
-    </Alert>
-
-    <button className={buttonClasses} onClick={() => setActive(!isActive)}>Make me active</button>
+    </Alert> */}
+    {/* <button className={buttonClasses} onClick={() => setActive(!isActive)}>Make me active</button> */}
 
     </Layout>
   )
