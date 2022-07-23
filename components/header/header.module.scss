@@ -57,6 +57,7 @@
         }
         ul {
             list-style: none;
+            padding: 0;
             display: flex;
             flex-direction: column;
             margin-bottom: $spacing-lg;
@@ -67,11 +68,74 @@
                 margin-right: calc(0.5rem + #{$spacing-md});
             }
             li {
-                text-decoration: none;
-                color: inherit;
-                padding: .75rem;  //LO 22:49
+                &:not(:last-child) {
+                    margin-bottom: $spacing-lg;
+                    @include breakpoint(md) {
+                        margin-bottom: 0;
+                        margin-right: $spacing-md;
+                    }
+                }
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                    padding: 0.75rem 1.25rem;
+                    border-radius: $borderRadius;
+                    transition: 0.3s ease all;
+
+                    &:hover {
+                        background: rgba($light, 0.1);
+                    }
+                    &:active {
+                        border-radius: calc(#{$borderRadius} + 6px);
+                        background: linear-gradient(rgba($light, 0.1), rgba($light, 0.2));
+                    }
+                }
             }
         }
+        button {
+            cursor: pointer;
+            outline: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: $borderRadius;
+            font-size: 1rem;
+            font-family: inherit;
+            background: $primary;
+            color: $dark;
+            border: 1px solid transparent;
+            transition: 0.3s ease all;
+
+            &:hover {
+                border-color: $primary;
+                background: rgba($primary, 0.1);
+                color: $primary;
+            }
+            &:active {
+                border-color: $primary;
+                background: linear-gradient(rgba($primary, 0.2), rgba($primary, 0.3));
+                color: $primary;
+            }
+        }
+
+        &.isMenu {
+            transform: translate(100%);
+        }
+    }
+
+    &__toggle {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        transition: 0.3s ease all;
+        position: relative;
+
+        &:hover {
+            color: $primary;
+        }
+
+        @include breakpoint(md) {
+            display: none;
+        } 
     }
 }    
 
