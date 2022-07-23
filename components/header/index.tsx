@@ -5,16 +5,21 @@ import { AiOutlineClose } from "react-icons/ai"
 
 import styles from "./header.module.scss";
 
+// using next/router to PUSH CTA button. 
+import { useRouter } from 'next/router'
+
 // nextjs Link?
 // import error: 'useHistory' is not exported from 'react-router-dom'
 // update, re react-router-dom v6 useHistory() is replaced by useNavigate()
-import { Link, useNavigate } from "react-router-dom";
-
+// useNavigate problematic as well. try next/link 
+//// import { Link, useNavigate } from "react-router-dom";
+import Link from 'next/link'
 
 
 const Header: FC = () => {
     // const history = useNavigate();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
+    const router = useRouter();
     const [menuOpen, setMenuOpen] = useState(false);
     const [size, setSize] = useState({
         width: undefined,
@@ -48,14 +53,18 @@ const Header: FC = () => {
         // Property 'push' does not exist on type 'History'.ts(2339)
         // REF : https://stackoverflow.com/questions/71915009/property-push-does-not-exist-on-type-navigatefunction-typescript
         // history.push("/page-cta");
-        navigate("/page-cta");
+        // navigate("/page-cta");
+        <Link href="/page-cta"></Link>
+        router.push({ pathname: "/page-cta" });
     };
 
 return (
     <header className={styles["header"]}>
         <div className={styles["header__content"]}>
-            <Link to="/" className={styles["header__content__logo"]}>
-                navbar
+            <Link href="/">
+                <a className={styles["header__content__logo"]}>
+                    AM|FM
+                </a>
             </Link>
         
         {/* apply header__content__nav and optional second class. If the menu is
@@ -67,18 +76,24 @@ return (
         >
             <ul>
                 <li>
-                    <Link to="/about" onClick={menuToggleHandler}>
-                                About
+                    <Link href="/about">
+                        <a onClick={menuToggleHandler}>
+                            About
+                        </a>
                     </Link>
                 </li> 
                 <li>
-                    <Link to="/projects" onClick={menuToggleHandler}>
-                                projects
+                    <Link href="/projects">
+                        <a onClick={menuToggleHandler}>
+                            Projects
+                        </a>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/contact" onClick={menuToggleHandler}>
-                                contact
+                    <Link href="/contact">
+                        <a onClick={menuToggleHandler}>
+                            Contact
+                        </a>
                     </Link>
                 </li>
             </ul>
