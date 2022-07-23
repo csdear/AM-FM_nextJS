@@ -9,6 +9,12 @@ body {
   //   Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
+  width: 100%;
+  color: $dark; // needed?
+}
+
+#root {  // root needed?
+  height: 100%; 
 }
 
 * {

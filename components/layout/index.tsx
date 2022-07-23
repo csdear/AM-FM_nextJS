@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import utilStyles from '../../styles/utils.module.scss'
 import Link from 'next/link'
+import Header from '../header';
 
 const name = 'Stuart Dear'
 export const siteTitle = '|Next.js Sample Website|'
@@ -17,6 +18,7 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
   console.log('home?', home)
   return (
     <div className={styles["layout"]}>
+    <Header />
     <div className={styles["layout__container"]}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
