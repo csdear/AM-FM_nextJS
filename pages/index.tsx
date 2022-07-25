@@ -9,6 +9,10 @@ import cn from 'classnames'
 import React, { useState } from 'react'
 import { getSortedPostsData } from '../lib/posts'
 
+
+
+
+//1. get static props
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
   return {
@@ -18,6 +22,8 @@ export async function getStaticProps() {
   }
 }
 
+// 2. render the posts on home. from frontmatter, I am using id, date and title.
+// later I could create frontmatter 'description' for the posts like in jfelix.
 export default function Home({ allPostsData }) {
   console.log(`allPostsData ${JSON.stringify(allPostsData, null, 4)}`)
   const [isActive, setActive] = useState(false);
