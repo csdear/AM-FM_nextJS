@@ -29,20 +29,21 @@ export async function getStaticPaths() {
 
 //Post compontne receiving prop for postData.
 export default function Post({ postData }) {
-  console.log(postData);
+  console.log('GROUND ZERO: page postData var:', postData);
     return (
       <Layout>
         <Head>
           <title>{postData.title}</title>
         </Head>
+
         <article>
-        
           <h1 className={utilStyles.headingXl}>{postData.title}</h1>
           <div className={utilStyles.lightText}>
             <Date dateString={postData.date} />
           </div>
           <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </article>
+
       </Layout>
     )
   }

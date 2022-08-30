@@ -9,7 +9,15 @@ import cn from 'classnames'
 import React, { useState } from 'react'
 import { getSortedPostsData } from '../lib/posts'
 
-
+// I dont think this is needed...
+// i am not outting my post titles in a stanadlone
+// component such as Card.tsx.  But I could if 
+// I want more control. SEE 'Index page' and '
+// Card.tsx in the example. It is very clean.  but not sure
+// the work involved. 
+// interface ArticleProps {
+//   article: ArticleMeta;
+// }
 
 
 //1. get static props
@@ -24,7 +32,7 @@ export async function getStaticProps() {
 
 // 2. render the posts on home. from frontmatter, I am using id, date and title.
 // later I could create frontmatter 'description' for the posts like in jfelix.
-export default function Home({ allPostsData }) {
+export default function Home<ArticleProps>({ allPostsData, article }) {
   console.log(`allPostsData ${JSON.stringify(allPostsData, null, 4)}`)
   const [isActive, setActive] = useState(false);
   const buttonClasses = cn({
