@@ -2,7 +2,7 @@ import React, { FC, ReactNode} from 'react';
 import styles from './layout.module.scss'
 import Head from 'next/head'
 import Image from 'next/image'
-import utilStyles from '../../styles/utils.module.scss'
+import utilStyles from '../../../styles/utils.module.scss'
 import Link from 'next/link'
 import Header from '../header';
 

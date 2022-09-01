@@ -1,7 +1,7 @@
-import Layout from '../../components/layout'
-import { getAllPostIds, getPostData } from '../../lib/posts'
+import Layout from '../../src/components/layout'
+import { getAllPostIds, getPostData } from '../../src/postsDEP'
 import Head from 'next/head'
-import Date from '../../components/date'
+import Date from '../../src/components/date'
 import utilStyles from '../../styles/utils.module.scss'
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";

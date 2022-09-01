@@ -1,11 +1,11 @@
-@import '../../styles/variables.scss';
+@import '../../../styles/variables.scss';
 
 .header {
     background-color: $dark;
     width: 100%;
     height: $headerHeight;
     padding: 0 1.5rem;
-    // first breakpoint 
+    // first breakpoint
     @include breakpoint(md) {
         padding: 0 3rem;
     }
@@ -48,7 +48,7 @@
         transition: 0.3s ease transform;
 
         @include breakpoint(md) {
-            transform: none; 
+            transform: none;
             flex-direction: row;
             background: transparent;
             width: auto;
@@ -135,8 +135,8 @@
 
         @include breakpoint(md) {
             display: none;
-        } 
+        }
     }
-}    
+}
 
 }

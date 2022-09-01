@@ -1,33 +1,41 @@
+//  pages/index.tsx : where we show a  list of  all of our articles.
+
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import Alert from '../components/alert'
+import Layout, { siteTitle } from '../src/components/layout'
+import Alert from '../src/components/alert'
 import utilStyles from '../styles/utils.module.scss'
 import Link from 'next/link'
-import Date from '../components/date'
+import Date from '../src/components/date'
 import styles from '../styles/Home.module.scss'
 import cn from 'classnames'
 import React, { useState } from 'react'
-import { getSortedPostsData } from '../lib/posts'
+//  import { getSortedPostsData } from '../lib/posts'
+import { getAllPosts, PostMeta } from "@/src/api"
 
 // I dont think this is needed...
 // i am not outting my post titles in a stanadlone
-// component such as Card.tsx.  But I could if 
+// component such as Card.tsx.  But I could if
 // I want more control. SEE 'Index page' and '
 // Card.tsx in the example. It is very clean.  but not sure
-// the work involved. 
+// the work involved.
 // interface ArticleProps {
 //   article: ArticleMeta;
 // }
 
 
-//1. get static props
+//1. get static props -- the O.G.
+// export async function getStaticProps() {
+//   const allPostsData = getSortedPostsData()
+//   return {
+//     props: {
+//       allPostsData
+//     }
+//   }
+// }
+
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
-  return {
-    props: {
-      allPostsData
-    }
-  }
+  const posts = getAllPosts()
+  return { props:  {}}
 }
 
 // 2. render the posts on home. from frontmatter, I am using id, date and title.
@@ -71,7 +79,7 @@ export default function Home<ArticleProps>({ allPostsData, article }) {
             ))}
           </ul>
         </section>
-      
+
       {/* <section>
       <div className={styles.grid}>
         <Link href="/posts/first-post-deprecated">
