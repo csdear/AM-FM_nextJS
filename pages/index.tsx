@@ -34,16 +34,20 @@ import { getAllPosts, PostMeta } from "@/src/api"
 // }
 
 export async function getStaticProps() {
-  // not too many for now, lets just do 9 posts per page fornow. 
-  const posts = getAllPosts().slice(0, 9);
-  console.log('nuPosts :', posts);
-  return { props:  {}}
+  // not too many for now, lets just do 9 posts per page fornow with slice(0,9)
+  const posts = getAllPosts()
+    .slice(0, 9)
+    .map(post => post.meta);
+
+    console.log('nuPosts :', posts);
+    // 'posts' will be passed as props to the lucky component.
+  return { props:  { posts }}
 }
 
 // 2. render the posts on home. from frontmatter, I am using id, date and title.
 // later I could create frontmatter 'description' for the posts like in jfelix.
-export default function Home<ArticleProps>({ allPostsData, article }) {
-  console.log(`allPostsData ${JSON.stringify(allPostsData, null, 4)}`)
+export default function Home({ posts }: { posts: PostMeta[] }) {
+  console.log(`reformed ${JSON.stringify(posts, null, 4)}`)
   const [isActive, setActive] = useState(false);
   const buttonClasses = cn({
         "btn": true,
@@ -68,9 +72,9 @@ export default function Home<ArticleProps>({ allPostsData, article }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
           <h2 className={utilStyles.headingLg}>Blog</h2>
           <ul className={utilStyles.list}>
-            {allPostsData.map(({ id, date, title }) => (
-              <li className={utilStyles.listItem} key={id}>
-                <Link href={`/posts/${id}`}>
+            {posts.map(({ slug, date, title }) => (
+              <li className={utilStyles.listItem} key={slug}>
+                <Link href={`/posts/${slug}`}>
                   <a>{title}</a>
                 </Link>
                 <br />
