@@ -34,7 +34,9 @@ import { getAllPosts, PostMeta } from "@/src/api"
 // }
 
 export async function getStaticProps() {
-  const posts = getAllPosts()
+  // not too many for now, lets just do 9 posts per page fornow. 
+  const posts = getAllPosts().slice(0, 9);
+  console.log('nuPosts :', posts);
   return { props:  {}}
 }
 
