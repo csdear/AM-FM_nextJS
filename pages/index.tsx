@@ -72,13 +72,19 @@ export default function Home({ posts }: { posts: PostMeta[] }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
           <h2 className={utilStyles.headingLg}>Blog</h2>
           <ul className={utilStyles.list}>
-            {posts.map(({ slug, date, title }) => (
+            {posts.map(({ slug, date, title, excerpt, tags }) => (
               <li className={utilStyles.listItem} key={slug}>
                 <Link href={`/posts/${slug}`}>
                   <a>{title}</a>
                 </Link>
                 <br />
                 <small className={utilStyles.lightText}>
+                  <p>{excerpt}</p>
+                  <p>{tags.map((tag) => (
+              <Link key={tag} href={`/tags/${tag}`}>
+                {tag}
+              </Link>
+            ))}</p>
                   <Date dateString={date}></Date>
                 </small>
               </li>
