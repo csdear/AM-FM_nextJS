@@ -11,6 +11,11 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 
+interface MDXPost {
+  source: MDXRemoteSerializeResult<Record<string, unknown>>;
+  meta: PostMeta;
+}
+
 // import ReactMarkdown from "react-markdown";
 // import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
@@ -69,20 +74,26 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // }
 
 //Post compontne receiving prop for postData.
-export default function Post({ postData }) {
-  console.log('GROUND ZERO: page postData var:', postData);
+//DEP
+// export default function Post({ postData }) {
+// a 'post' is source and meta.
+export default function Post({ post }: {post: MDXPost}) {
+  console.log('GROUND ZERO: page postData var:', post);
     return (
       <Layout home={false}>
         <Head>
-          <title>{postData.title}</title>
+          <title>{post.meta.title}</title>
         </Head>
 
         <article>
-          <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+          <h1 className={utilStyles.headingXl}>{post.meta.title}</h1>
           <div className={utilStyles.lightText}>
-            <Date dateString={postData.date} />
+            <Date dateString={post.meta.date} />
           </div>
-          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          {/* DEP */}
+          {/* <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} /> */}
+          {/* // MDXRemote wants to receive the SOURCE. We spread it in via post.source */}
+          <MDXRemote {...post.source} />
         </article>
 
       </Layout>

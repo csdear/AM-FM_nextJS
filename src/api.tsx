@@ -3,11 +3,17 @@ import fs  from "fs";
 import { sync } from "glob";
 import matter from "gray-matter";
 
-const POSTS_PATH = path.join(process.cwd(), "posts");
+// To work on windows machine I had to replace globally the backslashes with forward slashes
+const POSTS_PATH = path.join(process.cwd(), "posts").replace(/\\/g, "/");
+console.log(POSTS_PATH);
 
 export const getSlugs = ():  string[] => {
     
-    const paths =  sync(`${POSTS_PATH}/*.mdx`);
+    const paths = sync(`${POSTS_PATH}/*.mdx`);
+    
+    // on win, posts_path comes in like C:\Users\csdear\Documents\GitHub\AM-FM_nextJS\posts
+    // only fwd slash paths will work const paths = sync('C:/Users/csdear/Documents/GitHub/AM-FM_nextJS/posts/*.mdx');
+    console.log(POSTS_PATH);
     console.log('GLOBS FOUND', paths);
     
     return paths.map((path) => {
