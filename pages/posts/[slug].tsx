@@ -10,6 +10,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
+import YouTube from "@/src/components/youTube"
 
 interface MDXPost {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -37,7 +38,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as { slug: string };
   const { content, meta } = getPostFromSlug(slug);
   // pass `content` to serialize, lib mdxsource receives content
-  // and knows what to do with it... make it html. 
+  // and knows what to do with it... make it html.
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
@@ -53,8 +54,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 // Build an array [] of paths that has slug like ['ssg-ssr']
 // Return a object `paths`, and fallback false which
-// means dont try to generate dynamically, all the static 
-// pages that should exist, exist. 
+// means dont try to generate dynamically, all the static
+// pages that should exist, exist.
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getSlugs().map((slug) => ({ params: { slug } }));
 
@@ -92,8 +93,10 @@ export default function Post({ post }: {post: MDXPost}) {
           </div>
           {/* DEP */}
           {/* <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} /> */}
-          {/* // MDXRemote wants to receive the SOURCE. We spread it in via post.source */}
-          <MDXRemote {...post.source} />
+          {/* // MDXRemote wants to receive the SOURCE. We spread it in via post.source
+          we also pass in a components object, the components we want to inject within
+          our mdx file, such as YouTube. */}
+          <MDXRemote {...post.source} components={{YouTube}}/>
         </article>
 
       </Layout>
