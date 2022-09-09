@@ -7,10 +7,13 @@ import { getPostFromSlug, getSlugs, PostMeta } from "@/src/api";
 import type { GetStaticProps, GetStaticPaths } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeSlug from "rehype-slug"; // for h1,h2,h3 etc attaches a slug as an id (34:50)
+import rehypeAutolinkHeadings from "rehype-autolink-headings"; //wrap a link around  the  headings. Centers viewport on the heading, and helps when linking to this  page  to take user right to the specific section.
 import rehypeHighlight from "rehype-highlight";
+// to be injected  into MDX
 import YouTube from "@/src/components/youTube"
+import Image from "next/image";
+import "highlight.js/styles/atom-one-dark.css";
 
 interface MDXPost {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
@@ -39,6 +42,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { content, meta } = getPostFromSlug(slug);
   // pass `content` to serialize, lib mdxsource receives content
   // and knows what to do with it... make it html.
+  // we also pass in some options when we serialize our md content as
+  // mdxOptions, with rehypePlugiuns to add syntax highlighting
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
@@ -96,7 +101,7 @@ export default function Post({ post }: {post: MDXPost}) {
           {/* // MDXRemote wants to receive the SOURCE. We spread it in via post.source
           we also pass in a components object, the components we want to inject within
           our mdx file, such as YouTube. */}
-          <MDXRemote {...post.source} components={{YouTube}}/>
+          <MDXRemote {...post.source} components={{YouTube, Image}}/>
         </article>
 
       </Layout>
