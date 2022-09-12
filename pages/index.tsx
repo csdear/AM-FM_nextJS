@@ -69,6 +69,7 @@ export default function Home({ posts }: { posts: PostMeta[] }) {
       </section>
 
       {/* getStaticProps::blog */}
+      {/* ToDo: This needs to be refactored using the articles component */}
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
           <h2 className={utilStyles.headingLg}>Blog</h2>
           <ul className={utilStyles.list}>
@@ -80,7 +81,7 @@ export default function Home({ posts }: { posts: PostMeta[] }) {
                 <br />
                 <small className={utilStyles.lightText}>
                   <p>{excerpt}</p>
-                  <p>{tags.map((tag) => (
+                  <p className={utilStyles.tags}>{tags.map((tag) => (
               <Link key={tag} href={`/tags/${tag}`}>
                 {tag}
               </Link>

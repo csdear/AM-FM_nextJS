@@ -1,0 +1,24 @@
+//ToDo :  convert this to proper sass format.
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .list li {
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .tags {
+    font-size: 0.75rem;
+  }
+  .tags a:after {
+    content: " . ";
+  }
+  .tags a:last-child:after {
+    content: "";
+  }
