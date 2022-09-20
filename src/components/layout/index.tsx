@@ -47,7 +47,14 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
               width={144}
               alt={name}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={utilStyles.heading2Xl}> {/*BIG NAME*/}
+              {name}
+              <br />
+              <section className={utilStyles.subHeading}>
+                <code>tech hedge wizardry from the trenches.</code>
+
+              </section>
+              </h1>
           </>
         ) : (
           <>

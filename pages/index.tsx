@@ -60,10 +60,10 @@ export default function Home({ posts }: { posts: PostMeta[] }) {
         <title>{siteTitle}</title>
       </Head>
 
-      <section className={utilStyles.subHeading}>
+      {/* <section className={utilStyles.subHeading}>
         <code>tech hedge wizardry from the trenches.</code>
 
-      </section>
+      </section> */}
 
       {/* getStaticProps::blog */}
       {/* ToDo: This needs to be refactored using the articles component */}
