@@ -1,8 +1,9 @@
 @import './variables.scss';
 
-.heading2Xl {
+.heading2Xl {  // The big name "stuart Dear"
     font-family: $PermanentMarker;
-    font-size: 2.5rem;
+    color: $weakWhite;
+    font-size: 3rem;
     line-height: 1.2;
     font-weight: 800;
     letter-spacing: -0.05rem;
@@ -15,6 +16,7 @@
     font-weight: 800;
     letter-spacing: -0.05rem;
     margin: 1rem 0;
+    color: $strongWhite;
   }
 
   .headingLg {
@@ -32,6 +34,8 @@
     line-height: 1.5;
     display: flex;
     justify-content: center;
+    color: $green;
+    font-family: $RobotoCondensed;
   }
 
   .borderCircle {
@@ -58,11 +62,13 @@
   }
 
   .lightText {
-    color: #666;
+    // color: #666;  // o.g. grey, looks okay.
+    color: $green;
   }
 
-  .tags {
+  .tags a {  // added 'a' for specificity
     font-size: 0.75rem;
+    color: coral;
   }
   .tags a:after {
     content: " - ";
