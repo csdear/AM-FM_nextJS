@@ -60,18 +60,15 @@ export default function Home({ posts }: { posts: PostMeta[] }) {
         <title>{siteTitle}</title>
       </Head>
 
-      <section className={utilStyles.headingMd}>
-        <p>Hello, I am Stuart Dear, Full Stack Software Engineer</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
+      <section className={utilStyles.subHeading}>
+        <code>tech hedge wizardry from the trenches.</code>
+
       </section>
 
       {/* getStaticProps::blog */}
       {/* ToDo: This needs to be refactored using the articles component */}
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-          <h2 className={utilStyles.headingLg}>Blog</h2>
+          {/* <h2 className={utilStyles.headingLg}>Blog</h2> */}
           <ul className={utilStyles.list}>
             {posts.map(({ slug, date, title, excerpt, tags }) => (
               <li className={utilStyles.listItem} key={slug}>

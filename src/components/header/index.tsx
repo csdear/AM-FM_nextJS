@@ -5,13 +5,14 @@ import { AiOutlineClose } from "react-icons/ai"
 
 import styles from "./header.module.scss";
 
-// using next/router to PUSH CTA button. 
+// using next/router to PUSH CTA button.
 import { useRouter } from 'next/router'
+import Image from "next/image";
 
 // nextjs Link?
 // import error: 'useHistory' is not exported from 'react-router-dom'
 // update, re react-router-dom v6 useHistory() is replaced by useNavigate()
-// useNavigate problematic as well. try next/link 
+// useNavigate problematic as well. try next/link
 //// import { Link, useNavigate } from "react-router-dom";
 import Link from 'next/link'
 
@@ -63,13 +64,21 @@ return (
         <div className={styles["header__content"]}>
             <Link href="/">
                 <a className={styles["header__content__logo"]}>
-                    AM|FM
+                    {'sd'}
+                    <Image
+                        priority
+                        src="/images/atom_x2.png"
+                        // className={styles["header__content__logo"]}
+                        height={50}
+                        width={50}
+                        alt={'atom'}
+                        />
                 </a>
             </Link>
-        
+
         {/* apply header__content__nav and optional second class. If the menu is
         open and the size.width is less than 768 apply .isMenu, else, no secondary class */}
-        <nav 
+        <nav
             className={`${styles["header__content__nav"]} ${
                 menuOpen && size.width < 768 ? styles["isMenu"] : ""
             }`}
@@ -81,14 +90,14 @@ return (
                             About
                         </a>
                     </Link>
-                </li> 
-                <li>
+                </li>
+                {/* <li>
                     <Link href="/projects">
                         <a onClick={menuToggleHandler}>
                             Projects
                         </a>
                     </Link>
-                </li>
+                </li> */}
                 <li>
                     <Link href="/contact">
                         <a onClick={menuToggleHandler}>
@@ -97,7 +106,7 @@ return (
                     </Link>
                 </li>
             </ul>
-            <button onClick={ctaClickHandler}>CTA Page</button>
+            {/* <button onClick={ctaClickHandler}>CTA Page</button> */}
         </nav>
         <div className={styles["header__content__toggle"]}>
             {!menuOpen ? (
