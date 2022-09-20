@@ -2,13 +2,18 @@
 
 .heading2Xl {  // The big name "stuart Dear"
     font-family: $PermanentMarker;
-    color: $weakWhite;
+    color: $strongWhite;
     font-size: 3rem;
     line-height: 1.2;
-    font-weight: 800;
-    letter-spacing: -0.05rem;
+    // font-weight: 400;
+    letter-spacing: 0.05rem;
     margin: 1rem 0;
   }
+
+  .heading2Xl:hover::first-letter {
+    color: orange;
+  }
+
 
   .headingXl {
     font-size: 2rem;
