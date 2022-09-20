@@ -64,15 +64,15 @@ return (
         <div className={styles["header__content"]}>
             <Link href="/">
                 <a className={styles["header__content__logo"]}>
-                    {'sd'}
-                    <Image
+                    {'AM|FM'}
+                    {/* <Image
                         priority
                         src="/images/atom_x2.png"
                         // className={styles["header__content__logo"]}
                         height={50}
                         width={50}
                         alt={'atom'}
-                        />
+                        /> */}
                 </a>
             </Link>
 

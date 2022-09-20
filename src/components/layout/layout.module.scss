@@ -1,5 +1,5 @@
 .layout {
-  
+
   &__container {
     max-width: 50rem; /* Orig 36 REM */
     padding: 0 1rem;
@@ -9,7 +9,7 @@
 
   &__header {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;  removes center aligning
     align-items: center;
   }
 
