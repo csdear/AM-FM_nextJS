@@ -85,6 +85,17 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
                   tech hedge wizardry from the trenches.
                 </section>
               </h1>
+              <section>
+                <div>-------------------------------------------------</div>
+              Hello! I am	Stuart Dear software engineer with 10+ years
+              industry experience.
+              I'm all about having fun, learning and writing code.
+			        I am a fullstack developer, but I really enjoy
+			        writing about Javascript, React, Typescript, Node --
+              pretty much everything under the JS sun.
+              Check out my blog posts thatta way 👉
+
+                </section>
             </div>
             </Box>
           </Grid>
