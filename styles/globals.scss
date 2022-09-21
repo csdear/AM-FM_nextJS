@@ -11,8 +11,8 @@ body {
   font-size: 18px;
   width: 100%;
   color: $weakWhite; // the post's main font color
-  background-color: rgb(26, 26, 29);  // entire page background color
-
+  // background-color: rgb(26, 26, 29);  // entire page background color
+  background-color: $darkCharcoal;
 }
 
 #root {  // root needed?

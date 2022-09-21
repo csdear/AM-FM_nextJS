@@ -1,7 +1,7 @@
 @import '../../../styles/variables.scss';
 
 .header {
-    background-color: $dark;
+    background-color: $charcoal;
     width: 100%;
     height: $headerHeight;
     padding: 0 1.5rem;
@@ -85,6 +85,7 @@
 
                     &:hover {
                         background: rgba($strongWhite, 0.1);
+                        color: $strongWhite;
                     }
                     &:active {
                         border-radius: calc(#{$borderRadius} + 6px);
