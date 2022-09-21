@@ -93,6 +93,7 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
 			        I am a fullstack developer, but I really enjoy
 			        writing about Javascript, React, Typescript, Node --
               pretty much everything under the JS sun.
+              Maybe a little Nostal-tech from a bygone era.
               Check out my blog posts thatta way 👉
 
                 </section>
