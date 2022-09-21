@@ -5,6 +5,8 @@ import Image from 'next/image'
 import utilStyles from '../../../styles/utils.module.scss'
 import Link from 'next/link'
 import Header from '../header';
+import Box from '@/src/components/box';
+import Grid from '@/src/components/grid';
 
 const name = 'Stuart Dear'
 export const siteTitle = '|Next.js Sample Website|'
@@ -39,6 +41,35 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
       <header className={styles["layout__header"]}>
         {home ? (
           <>
+
+      {/* GRID starts here with the folloing div container
+          dev aide : style={{ margin: "16px", position: "relative", height: "100vh", background: "darkGreen" }}
+      */}
+      <div className="container">
+          <br/>
+
+          {/*WRAPPING GRID*/}
+          <Grid
+          container // container: remove for full width, vertical Y-AXIS stack of pancakes
+          spacing="sm"  // spacing: xs, sm, md, or lg.
+          alignItems="flex-start" // alignItems : "flex-start" | "center" | "flex-end"; Alignment of grid items Top, Middle or Bottom.
+          justifyContent="flex-start" // justifyContent : "flex-start" | "center" | "flex-end" | "space-between";
+          // style attribute here only used as a dev Aide.  Default height of 75% and background color lightGreen
+          // so you can see the bounds of the WRAPPING Grid. OR add --
+          // style={{ height: "100%", width:"100%", background: "lightGreen" }}
+        >
+          {/*Grid *ITEM* xs, sm, md and lg controls how much horizontal width THIS grid item and box combination will take up, out of a  maximum of 12 columns.
+            the number is how many columns to take up. Subsequent Grid  items will wrap to the next line if they  run out of room.
+            'lg' is the most common, but resize the viewport to see how the grid itrem re-draws itself in xs, sm, md dimensions.
+            lg={3} : 3/12 columns
+            lg={6} : 6/12 columns. Grid item takes up half the screen.
+            lg={12} : 12/12, full width.
+          */}
+          {/* devAide: style={{ border: "1px dashed white" }} */}
+          <Grid item lg={4}>
+            {/* box1 */}
+            <Box>
+              <div className={utilStyles.contentIntro}>
             <Image
               priority
               src="/images/githubProfile.jpg"
@@ -50,14 +81,29 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
             <h1 className={utilStyles.heading2Xl}> {/*BIG NAME*/}
               {name}
               <br />
-              <section className={utilStyles.subHeading}>
-                tech hedge wizardry from the trenches.
-
-              </section>
+                <section className={utilStyles.subHeading}>
+                  tech hedge wizardry from the trenches.
+                </section>
               </h1>
+            </div>
+            </Box>
+          </Grid>
+          {/* devAide bluebackground style={{ background: "Blue" }}
+          style={{ border: "1px dashed white" }}
+          */}
+          <Grid item lg={8}>
+            <Box>
+            <div className={utilStyles.contentBlogItems}>
+            <main>{children}</main>
+            </div>
+            </Box>
+          </Grid>
+        </Grid>
+        </div>
           </>
         ) : (
           <>
+          <div className={styles["layout__postContent"]}>
             <Link href="/">
               <a>
                 <Image
@@ -75,10 +121,11 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
                 <a className={utilStyles.colorInherit}>{name}</a>
               </Link>
             </h2>
+            <main>{children}</main>
+            </div>
           </>
         )}
       </header>
-      <main>{children}</main>
       {!home && (
         <div className={styles["layout__backToHome"]}>
           <Link href="/">

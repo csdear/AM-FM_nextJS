@@ -1,15 +1,22 @@
 .layout {
 
   &__container {
-    max-width: 50rem; /* Orig 36 REM */
-    padding: 0 1rem;
-    margin: 3rem auto 6rem;
+    // max-width: 50rem; /* Orig 36 REM */
+    // padding: 0 1rem;
+    // margin: 3rem auto 6rem;
     /* background-color: lightcoral; */
   }
 
   &__header {
-    display: flex;
+    // display: flex;
     // flex-direction: column;  removes center aligning
+    // align-items: center;
+  }
+
+  &__postContent {
+    // padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
   }
 

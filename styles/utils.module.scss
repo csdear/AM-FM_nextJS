@@ -1,5 +1,14 @@
 @import './variables.scss';
 
+.contentIntro {
+  // border: 1px dashed white;
+  padding-left: 3.125rem;
+}
+
+.contentBlogItems {
+  // border: dashed red 1px;
+}
+
 .heading2Xl {  // The big name "stuart Dear"
     font-family: $PermanentMarker;
     color: $strongWhite;
