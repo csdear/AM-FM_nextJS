@@ -46,8 +46,9 @@
   .subHeading {
     font-size: 1.2rem;
     line-height: 1.5;
-    display: flex;
-    justify-content: center;
+    margin-left: 10rem;
+    // display: flex;
+    // justify-content: left;
     color: $green;
     font-family: $RobotoCondensed;
   }

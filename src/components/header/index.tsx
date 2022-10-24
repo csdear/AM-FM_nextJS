@@ -64,7 +64,7 @@ return (
         <div className={styles["header__content"]}>
             <Link href="/">
                 <a className={styles["header__content__logo"]}>
-                    {'AM|FM'}
+                    {/* {'AM|FM'} */}
                     {/* <Image
                         priority
                         src="/images/atom_x2.png"
@@ -84,6 +84,13 @@ return (
             }`}
         >
             <ul>
+            <li>
+                <Link href="/">
+                    <a onClick={menuToggleHandler}>
+                        Home
+                    </a>
+                </Link>
+                </li>
                 <li>
                     <Link href="/about">
                         <a onClick={menuToggleHandler}>

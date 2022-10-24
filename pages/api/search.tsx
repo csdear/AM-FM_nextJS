@@ -10,11 +10,13 @@ console.log('XXXsearch.ts posts', posts[0].meta.title); // the title is within t
 
 // An endpoint for our search api.
 export default (req, res) => {
-  req.query.q = 'static'; // stubbed query for testing. must too be lowercase NOTE. 
+  // req.query.q = 'static'; // stubbed query for testing. must too be lowercase NOTE. 
+  console.log('QUERY', req.query.q);
   const results = req.query.q ?
     posts.filter(post => post.meta.title.toLowerCase().includes(req.query.q)) : []
   // successfully found 'static' within title 'When to Use Static Generation v.s. Server-side RenderingXxX'
   res.statusCode = 200
   res.setHeader('Content-Type', 'application/json')
+  console.log('RESULTS', results);
   res.end(JSON.stringify({ results }))
 }

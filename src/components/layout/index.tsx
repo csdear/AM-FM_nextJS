@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Header from '../header';
 import Box from '@/src/components/box';
 import Grid from '@/src/components/grid';
+import Search from '@/src/components/search'
 
 const name = 'Stuart Dear'
 export const siteTitle = '|Next.js Sample Website|'
@@ -82,19 +83,17 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
               {name}
               <br />
                 <section className={utilStyles.subHeading}>
-                  tech hedge wizardry from the trenches.
+                  tech hedge wizardry
                 </section>
               </h1>
               <section>
                 <div>-------------------------------------------------</div>
-              Hello! I am	Stuart Dear software engineer with 10+ years
-              industry experience.
-              I'm all about having fun, learning and writing code.
-			        I am a fullstack developer, but I really enjoy
-			        writing about Javascript, React, Typescript, Node --
-              pretty much everything under the JS sun.
-              Maybe a little Nostal-tech from a bygone era.
-              Check out my blog posts thatta way 👉
+                Hey! I'm Stuart Dear.
+            I work in Software development <br />
+            Everything under the JS sun <br />
+            Most of the Time figuring out what went wrong<br />
+            Sometimes Carbon fiber, sometimes bondo.
+              
 
                 </section>
             </div>
@@ -104,6 +103,7 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
           style={{ border: "1px dashed white" }}
           */}
           <Grid item lg={8}>
+          <Search />
             <Box>
             <div className={utilStyles.contentBlogItems}>
             <main>{children}</main>
