@@ -66,10 +66,12 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
             lg={6} : 6/12 columns. Grid item takes up half the screen.
             lg={12} : 12/12, full width.
           */}
-          {/* devAide: style={{ border: "1px dashed white" }} */}
-          <Grid item lg={4}>
+
+          {/* MY INFO BOX 
+          devAide: style={{ border: "1px dashed white" }} */}
+          <Grid item lg={4} style={{ border: "1px dashed white" }}>
             {/* box1 */}
-            <Box>
+            <Box >
               <div className={utilStyles.contentIntro}>
             <Image
               priority
