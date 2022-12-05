@@ -2,12 +2,16 @@
     position: relative;
   }
   
+  // would be cool if search styled like a old school terminal! with a blinking '>'
   .search {
     border: 1px solid #666;
     box-sizing: border-box;
     font-size: 18px;
     padding: 18px;
     width: 100%;
+    outline: thick double #d6d6d6;
+    color: white;
+    background-color: black;
   }
   
   .results {

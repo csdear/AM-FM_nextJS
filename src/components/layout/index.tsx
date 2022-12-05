@@ -69,44 +69,49 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
 
           {/* MY INFO BOX 
           devAide: style={{ border: "1px dashed white" }} */}
-          <Grid item lg={4} style={{ border: "1px dashed white" }}>
+          <Grid item lg={4}>
             {/* box1 */}
-            <Box >
-              <div className={utilStyles.contentIntro}>
-            <Image
-              priority
-              src="/images/githubProfile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}> {/*BIG NAME*/}
-              {name}
-              <br />
-                <section className={utilStyles.subHeading}>
-                  tech hedge wizardry
-                </section>
-              </h1>
-              <section>
-                <div>-------------------------------------------------</div>
-                Hey! I'm Stuart Dear.
-            I work in Software development <br />
-            Everything under the JS sun <br />
-            Most of the Time figuring out what went wrong<br />
-            Sometimes Carbon fiber, sometimes bondo.
-              
+            
+            <Box style={{ width: 'auto', margin: '0 3rem 0 3rem'}}>
+                  <div className={utilStyles.contentIntro}>
+                <Image
+                  priority
+                  src="/images/githubProfile.jpg"
+                  className={utilStyles.borderCircle}
+                  height={144}
+                  width={144}
+                  alt={name}
+                />
+                <h1 className={utilStyles.heading2Xl}> {/*BIG NAME*/}
+                  {name}
+                  <br />
+                    <section className={utilStyles.subHeading}>
+                      tech hedge wizardry
+                    </section>
+                  </h1>
+                  <section>
+                    <div>-------------------------------------------------</div>
+                    Hey! I'm Stuart Dear.
+                I work in Software development <br />
+                Everything under the JS sun and more* <br />
+                Most of the time figuring out what went wrong<br />
+                Sometimes Carbon fiber, sometimes bondo.
+                  
 
-                </section>
-            </div>
+                    </section>
+                </div>
             </Box>
+
           </Grid>
           {/* devAide bluebackground style={{ background: "Blue" }}
           style={{ border: "1px dashed white" }}
           */}
           <Grid item lg={8}>
-          <Search />
-            <Box>
+          
+          
+          
+            <Box style={{ marginRight: '3rem', marginTop: '1rem'}}>
+            <Search />
             <div className={utilStyles.contentBlogItems}>
             <main>{children}</main>
             </div>
