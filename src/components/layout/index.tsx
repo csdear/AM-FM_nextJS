@@ -69,9 +69,7 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
 
           {/* MY INFO BOX 
           devAide: style={{ border: "1px dashed white" }} */}
-          <Grid item lg={4}>
-            {/* box1 */}
-            
+          <Grid className={utilStyles.contentIntroArea} item lg={4}>
             <Box style={{ width: 'auto', margin: '0 3rem 0 3rem'}}>
                   <div className={utilStyles.contentIntro}>
                 <Image
@@ -96,13 +94,16 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
                 Everything under the JS sun and more* <br />
                 Most of the time figuring out what went wrong<br />
                 Sometimes Carbon fiber, sometimes bondo.
+                Peacocks on Powerlines.
                   
 
                     </section>
                 </div>
             </Box>
-
           </Grid>
+
+
+          {/* BLOG TITLES */}
           {/* devAide bluebackground style={{ background: "Blue" }}
           style={{ border: "1px dashed white" }}
           */}
