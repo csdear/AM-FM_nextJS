@@ -81,10 +81,12 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
                   alt={name}
                 />
                 <h1 className={utilStyles.heading2Xl}> {/*BIG NAME*/}
-                  {name}
+                  {/* {name} */}
+                  AM|FM
                   <br />
                     <section className={utilStyles.subHeading}>
-                      tech hedge wizardry
+                      {/* tech hedge wizardry */}
+                      Software development and other Static Thoughts
                     </section>
                   </h1>
                   <section>
