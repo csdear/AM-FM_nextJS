@@ -69,8 +69,8 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
 
           {/* MY INFO BOX 
           devAide: style={{ border: "1px dashed white" }} */}
-          <Grid className={utilStyles.contentIntroArea} item lg={4}>
-            <Box style={{ width: 'auto', margin: '0 3rem 0 3rem'}}>
+          <Grid className={utilStyles.contentIntroArea} item lg={6}>
+            <Box style={{ width: '500px', margin: '0 3rem 0 3rem'}}>
                   <div className={utilStyles.contentIntro}>
                 <Image
                   priority
@@ -109,11 +109,11 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
           {/* devAide bluebackground style={{ background: "Blue" }}
           style={{ border: "1px dashed white" }}
           */}
-          <Grid item lg={8}>
+          <Grid style={{ width: '500px'}} item lg={6}>
           
           
           
-            <Box style={{ marginRight: '3rem', marginTop: '1rem'}}>
+            <Box style={{ width: '100%', marginRight: '3rem', marginTop: '1rem'}}>
             <Search />
             <div className={utilStyles.contentBlogItems}>
             <main>{children}</main>

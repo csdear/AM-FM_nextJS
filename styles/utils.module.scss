@@ -17,7 +17,8 @@
 }
 
 .heading2Xl {  // The big name "stuart Dear"
-    font-family: $PermanentMarker;
+    // font-family: $PermanentMarker;
+    font-family: 'Web437_IBM_VGA_8x16';
     color: $strongWhite;
     font-size: 3rem;
     line-height: 1.2;
@@ -26,7 +27,7 @@
     margin: 1rem 0;
   }
 
-  .heading2Xl:hover::first-letter {
+  .heading2Xl:hover {
     color: orange;
   }
 
@@ -53,11 +54,12 @@
   .subHeading {
     font-size: 1.2rem;
     line-height: 1.5;
-    margin-left: 10rem;
+    // margin-left: 10rem;
     // display: flex;
     // justify-content: left;
     color: $green;
-    font-family: $RobotoCondensed;
+    // font-family: $RobotoCondensed;
+    font-family: 'Web437_IBM_VGA_8x16';
   }
 
   .borderCircle {
