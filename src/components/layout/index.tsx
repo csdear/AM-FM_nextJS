@@ -86,7 +86,7 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
                   <br />
                     <section className={utilStyles.subHeading}>
                       {/* tech hedge wizardry */}
-                      Software development and other Static Thoughts
+                      Tune in. Push up. Drop out. 
                     </section>
                   </h1>
                   <section>
