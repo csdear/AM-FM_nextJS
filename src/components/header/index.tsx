@@ -87,14 +87,14 @@ return (
             <li>
                 <Link href="/">
                     <a onClick={menuToggleHandler}>
-                        Home
+                        HOME
                     </a>
                 </Link>
                 </li>
                 <li>
                     <Link href="/about">
                         <a onClick={menuToggleHandler}>
-                            About
+                            ABOUT
                         </a>
                     </Link>
                 </li>
@@ -108,7 +108,7 @@ return (
                 <li>
                     <Link href="/contact">
                         <a onClick={menuToggleHandler}>
-                            Contact
+                            CONTACT
                         </a>
                     </Link>
                 </li>

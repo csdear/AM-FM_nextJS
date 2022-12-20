@@ -47,7 +47,7 @@
         //  backdrop-filter: blur(2px);
         transform: translate(0);
         transition: 0.3s ease transform;
-
+        
         @include breakpoint(md) {
             transform: none;
             flex-direction: row;
@@ -90,6 +90,13 @@
                     &:active {
                         border-radius: calc(#{$borderRadius} + 6px);
                         background: linear-gradient(rgba($strongWhite, 0.1), rgba($strongWhite, 0.2));
+                    }
+                
+                    &::before {
+                        content: "[";
+                    }
+                    &::after {
+                        content: "]";
                     }
                 }
             }
