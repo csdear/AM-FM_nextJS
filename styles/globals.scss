@@ -1,8 +1,8 @@
 @import './variables.scss';
 
 @font-face {
-  font-family: 'Web437_IBM_VGA_8x16';
-  src: url('../public/Web437_IBM_VGA_8x16.woff') format('woff');
+  font-family: 'ibm_vga8';
+  src: url('../public/ibm_vga8.woff2') format('woff2');
 }
 html,
 body {
@@ -11,10 +11,10 @@ body {
   // font-family: $RobotoCondensed; // NB_COMPTON
   // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
   //   Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-family: 'Web437_IBM_VGA_8x16';
+  font-family: 'ibm_vga8';
   
   line-height: 1.6;
-  font-size: 18px;
+  font-size: 16px;
   width: 100%;
   color: $weakWhite; // the post's main font color
   // background-color: rgb(26, 26, 29);  // entire page background color

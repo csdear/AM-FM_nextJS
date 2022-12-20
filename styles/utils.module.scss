@@ -18,7 +18,7 @@
 
 .heading2Xl {  // The big name "stuart Dear"
     // font-family: $PermanentMarker;
-    font-family: 'Web437_IBM_VGA_8x16';
+    font-family: 'ibm_vga8';
     color: $strongWhite;
     font-size: 3rem;
     line-height: 1.2;
@@ -59,7 +59,8 @@
     // justify-content: left;
     color: $green;
     // font-family: $RobotoCondensed;
-    font-family: 'Web437_IBM_VGA_8x16';
+    // font-family: 'Web437_IBM_VGA_8x16';
+    font-family: 'ibm_vga8';
   }
 
   .borderCircle {
