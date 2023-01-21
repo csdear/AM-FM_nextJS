@@ -13,6 +13,7 @@
 .separator__content {
     /* We won't see the separator line */
     background: $charcoal;
+    border: red 1px solid;
 
     /* Displayed at the center of separator */
     left: 50%;

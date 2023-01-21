@@ -8,6 +8,7 @@ import Header from '../header';
 import Box from '@/src/components/box';
 import Grid from '@/src/components/grid';
 import Search from '@/src/components/search'
+import Footer from '@/src/components/footer';
 
 const name = 'Stuart Dear'
 export const siteTitle = '|Next.js Sample Website|'
@@ -112,14 +113,21 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
           <Grid style={{ width: '500px'}} item lg={6}>
           
           
-          
+          {/* SEARCH COMPONENT */}
             <Box style={{ width: '100%', marginRight: '3rem', marginTop: '1rem'}}>
             <Search />
             <div className={utilStyles.contentBlogItems}>
             <main>{children}</main>
             </div>
             </Box>
+            <Box style={{ width: '100%', marginRight: '3rem', marginTop: '1rem'}}>
+            <Footer />
+            </Box>
+              
+            
+            
           </Grid>
+          
         </Grid>
         </div>
           </>
