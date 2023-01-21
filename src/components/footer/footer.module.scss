@@ -1,35 +1,53 @@
 @import '../../../styles/variables.scss';
 
 .separator {
-    margin-block-start: 50px;
+    margin-block-start: 0px;
     /* Content is centered horizontally */
-    align-items: center;
+    align-items: start;
     display: flex;
-
+    
     /* Used to set the position of text */
     position: relative;
+
+    // &__social-media {
+    //     background-color: red;
+    // }
+
+    &__media {
+        margin-inline-start: 200px;
+
+    &:hover {
+        cursor: pointer;
+    }
+        
+    }
+
+    &__content {
+        /* We won't see the separator line */
+        flex: 1; 
+        background: $charcoal;
+        border: red 1px solid;
+
+        /* Displayed at the center of separator */
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        /* Spacing */
+        padding: 0 0.25rem;
+
+        /* Demo */
+        width: 60%;
+        font-size: 20px;
+    }
+
+
 }
 
-.separator__content {
-    /* We won't see the separator line */
-    background: $charcoal;
-    border: red 1px solid;
 
-    /* Displayed at the center of separator */
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    /* Spacing */
-    padding: 0 0.25rem;
-
-    /* Demo */
-    width: 60%;
-}
-
-.separator__separator {
-    border-bottom: 1px solid #d1d5db;
-    height: 1px;
-    width: 100%;
-}
+// .separator__separator {
+//     border-bottom: 1px solid #d1d5db;
+//     height: 1px;
+//     width: 100%;
+// }

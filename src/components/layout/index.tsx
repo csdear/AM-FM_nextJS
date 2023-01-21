@@ -73,14 +73,14 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
           <Grid className={utilStyles.contentIntroArea} item lg={6}>
             <Box style={{ width: '500px', margin: '0 3rem 0 3rem'}}>
                   <div className={utilStyles.contentIntro}>
-                <Image
+                {/* <Image
                   priority
                   src="/images/githubProfile.jpg"
                   className={utilStyles.borderCircle}
                   height={144}
                   width={144}
                   alt={name}
-                />
+                /> */}
                 <h1 className={utilStyles.heading2Xl}> {/*BIG NAME*/}
                   {/* {name} */}
                   AM|FM
