@@ -81,23 +81,32 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
                   width={144}
                   alt={name}
                 /> */}
+           
+           
+
                 <h1 className={utilStyles.heading2Xl}> {/*BIG NAME*/}
                   {/* {name} */}
-                  AM|FM
-                  <br />
-                    <section className={utilStyles.subHeading}>
-                      {/* tech hedge wizardry */}
-                      Tune in. Push up. Drop out. 
-                    </section>
-                  </h1>
+                   AM|FM
+                  
+                </h1>
+
+                
+                  
+                
+                
+                <section className={utilStyles.subHeading}>
+                  {/* tech hedge wizardry */}
+                  Insert Content. Insert Content. Insert Content. 
+                </section>
+                  
                   <section>
                     <div>-------------------------------------------------</div>
-                    Hey! I'm Stuart Dear.
-                I work in Software development <br />
-                Everything under the JS sun and more* <br />
-                Most of the time figuring out what went wrong<br />
+                   + Hey! I'm Stuart Dear. + 
+                I work in Software development +
+                Everything under the JS sun and more + <br />
+                Most of the time figuring out what went wrong +<br />
                 Sometimes Carbon fiber, sometimes bondo.
-                Peacocks on Powerlines.
+                + Peacocks on Powerlines. +
                   
 
                     </section>
@@ -122,7 +131,29 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
             </Box>
             <Box style={{ width: '100%', marginRight: '3rem', marginTop: '1rem'}}>
             <Footer />
+            
             </Box>
+            <div className="ascii-art" style={{fontFamily: 'monospace', whiteSpace: 'pre', color: 'orange', lineHeight: '19px'}}>
+            ###### #    #   ##   #    # #####  #      ######<br />
+            #       #  #   #  #  ##  ## #    # #      #      <br />
+            #####    ##   #    # # ## # #    # #      ##### <br />
+            #        ##   ###### #    # #####  #      #      <br />
+            #       #  #  #    # #    # #      #      #      <br />
+            ###### #    # #    # #    # #      ###### ######<br />
+            </div>
+
+            <div className="ascii-art" style={{fontFamily: 'monospace', whiteSpace: 'pre', color: 'orange' }}>
+              &nbsp;             __  __ _ ______ __  __<br />  
+              &nbsp;       /\   |  \   | |  ____|  \   |<br />
+              &nbsp;      /  \  | \  / | | |__  | \  / |<br />
+              &nbsp;     / /\ \ | |\/| | |  __| | |\/| |<br />
+              &nbsp;    / ____ \| |  | | | |    | |  | |<br />
+              &nbsp;   /_/    \_\_|  |_| |_|    |_|  |_|<br />
+              &nbsp;                   | |<br />              
+              &nbsp;                   |_|<br />
+            </div>
+
+              
               
             
             
@@ -152,6 +183,7 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
               </Link>
             </h2>
             <main>{children}</main>
+            
             </div>
           </>
         )}
