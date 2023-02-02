@@ -20,6 +20,8 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children, home }) => {
   console.log('home?', home)
+  const [charCol, setCharCol] = React.useState('red');
+
   return (
     <div className={styles["layout"]}>
     <Header />
@@ -84,19 +86,26 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
            
            
 
-                <h1 className={utilStyles.heading2Xl}> {/*BIG NAME*/}
-                  {/* {name} */}
+                {/* <h1 className={utilStyles.heading2Xl}> 
                    AM|FM
-                  
-                </h1>
+                </h1> */}
 
-                
+                <div className="ascii-art" style={{fontFamily: 'monospace', whiteSpace: 'pre', color: 'orange' }}>
+              &nbsp;             __  __ _ ______ __  __<br />  
+              &nbsp;       <span style={{ color: `${charCol}`}} onMouseEnter={() => setCharCol("red")} onMouseLeave={() => setCharCol("white")}>/</span>\   |  \   | |  ____|  \   |<br />
+              &nbsp;      /  \  | \  / | | |__  | \  / |<br />
+              &nbsp;     / /\ \ | |\/| | |  __| | |\/| |<br />
+              &nbsp;    / ____ \| |  | | | |    | |  | |<br />
+              &nbsp;   /_/    \_\_|  |_| |_|    |_|  |_|<br />
+              &nbsp;                   | |<br />              
+              &nbsp;                   |_|<br />
+            </div>
                   
                 
                 
                 <section className={utilStyles.subHeading}>
                   {/* tech hedge wizardry */}
-                  Insert Content. Insert Content. Insert Content. 
+                  Nostal-tech. Tech Hedge Wizardry. 
                 </section>
                   
                   <section>
