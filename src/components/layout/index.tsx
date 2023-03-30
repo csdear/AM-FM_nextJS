@@ -19,7 +19,7 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ children, home }) => {
-  console.log('home?', home)
+  
   const [charCol, setCharCol] = React.useState('red');
 
   return (
@@ -73,7 +73,7 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
           {/* MY INFO BOX 
           devAide: style={{ border: "1px dashed white" }} */}
           <Grid className={utilStyles.contentIntroArea} item lg={6}>
-            <Box style={{ width: '500px', margin: '0 3rem 0 3rem'}}>
+            <Box style={{ width: '500px', height: '800px', backgroundColor: 'blue', margin: '0 3rem 0 3rem'}}>
                   <div className={utilStyles.contentIntro}>
                 {/* <Image
                   priority
@@ -83,29 +83,22 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
                   width={144}
                   alt={name}
                 /> */}
-           
+
            
 
-                {/* <h1 className={utilStyles.heading2Xl}> 
+                 <h1 className={utilStyles.heading2Xl}> 
                    AM|FM
-                </h1> */}
+                </h1>
 
-                <div className="ascii-art" style={{fontFamily: 'monospace', whiteSpace: 'pre', color: 'orange' }}>
-              &nbsp;             __  __ _ ______ __  __<br />  
-              &nbsp;       <span style={{ color: `${charCol}`}} onMouseEnter={() => setCharCol("red")} onMouseLeave={() => setCharCol("white")}>/</span>\   |  \   | |  ____|  \   |<br />
-              &nbsp;      /  \  | \  / | | |__  | \  / |<br />
-              &nbsp;     / /\ \ | |\/| | |  __| | |\/| |<br />
-              &nbsp;    / ____ \| |  | | | |    | |  | |<br />
-              &nbsp;   /_/    \_\_|  |_| |_|    |_|  |_|<br />
-              &nbsp;                   | |<br />              
-              &nbsp;                   |_|<br />
-            </div>
+                
                   
                 
                 
                 <section className={utilStyles.subHeading}>
                   {/* tech hedge wizardry */}
-                  Nostal-tech. Tech Hedge Wizardry. 
+                  Severe Web Development +
+                  Nostal-tech + Tech Hedge Wizardry +
+                  Assorted Nerdity. 
                 </section>
                   
                   <section>
@@ -116,7 +109,15 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
                 Most of the time figuring out what went wrong +<br />
                 Sometimes Carbon fiber, sometimes bondo.
                 + Peacocks on Powerlines. +
-                  
+                <div>-------------------------------------------------</div>
+                <Image
+                  priority
+                  src="/images/blah.png"
+                  className={utilStyles.borderCircle}
+                  height={1250}
+                  width={500}
+                  alt={name}
+                />
 
                     </section>
                 </div>
@@ -142,25 +143,9 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
             <Footer />
             
             </Box>
-            <div className="ascii-art" style={{fontFamily: 'monospace', whiteSpace: 'pre', color: 'orange', lineHeight: '19px'}}>
-            ###### #    #   ##   #    # #####  #      ######<br />
-            #       #  #   #  #  ##  ## #    # #      #      <br />
-            #####    ##   #    # # ## # #    # #      ##### <br />
-            #        ##   ###### #    # #####  #      #      <br />
-            #       #  #  #    # #    # #      #      #      <br />
-            ###### #    # #    # #    # #      ###### ######<br />
-            </div>
+            
 
-            <div className="ascii-art" style={{fontFamily: 'monospace', whiteSpace: 'pre', color: 'orange' }}>
-              &nbsp;             __  __ _ ______ __  __<br />  
-              &nbsp;       /\   |  \   | |  ____|  \   |<br />
-              &nbsp;      /  \  | \  / | | |__  | \  / |<br />
-              &nbsp;     / /\ \ | |\/| | |  __| | |\/| |<br />
-              &nbsp;    / ____ \| |  | | | |    | |  | |<br />
-              &nbsp;   /_/    \_\_|  |_| |_|    |_|  |_|<br />
-              &nbsp;                   | |<br />              
-              &nbsp;                   |_|<br />
-            </div>
+            
 
               
               
