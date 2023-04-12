@@ -5,7 +5,7 @@
     /* Content is centered horizontally */
     align-items: start;
     display: flex;
-    
+
     /* Used to set the position of text */
     position: relative;
 
@@ -19,12 +19,13 @@
     &:hover {
         cursor: pointer;
     }
-        
+
     }
 
     &__content {
         /* We won't see the separator line */
-        flex: 1; 
+        flex: 1;
+
         background: $charcoal;
         border: red 1px solid;
 

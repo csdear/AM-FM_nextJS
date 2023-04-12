@@ -1,14 +1,14 @@
 import React, { FC, ReactNode} from 'react';
-import styles from './layout.module.scss'
 import Head from 'next/head'
 import Image from 'next/image'
-import utilStyles from '../../../styles/utils.module.scss'
 import Link from 'next/link'
 import Header from '../header';
 import Box from '@/src/components/box';
-import Grid from '@/src/components/grid';
 import Search from '@/src/components/search'
 import Footer from '@/src/components/footer';
+
+import styles from './layout.module.scss'
+// import utilStyles from '../../../styles/utils.module.scss'
 
 const name = 'Stuart Dear'
 export const siteTitle = '|Next.js Sample Website|'
@@ -18,14 +18,18 @@ interface LayoutProps {
   home: boolean
 }
 
+// This "Layout" component bares the most responsibility for the HomePage layout AND THE POST itself
+// It is determined by a ternary.
+
 const Layout: FC<LayoutProps> = ({ children, home }) => {
-  
+
   const [charCol, setCharCol] = React.useState('red');
 
   return (
     <div className={styles["layout"]}>
-    <Header />
+      <Header />
     <div className={styles["layout__container"]}>
+    {/* NextJS HEAD = metadata */}
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -41,40 +45,15 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      {/** What header to render is determined by `home` ternary */}
-      <header className={styles["layout__header"]}>
+
+      {/** Header rendered determined by `home` prop ternary. Renders home or post variant */}
         {home ? (
           <>
 
-      {/* GRID starts here with the folloing div container
-          dev aide : style={{ margin: "16px", position: "relative", height: "100vh", background: "darkGreen" }}
-      */}
-      <div className="container">
-          <br/>
-
-          {/*WRAPPING GRID*/}
-          <Grid
-          container // container: remove for full width, vertical Y-AXIS stack of pancakes
-          spacing="sm"  // spacing: xs, sm, md, or lg.
-          alignItems="flex-start" // alignItems : "flex-start" | "center" | "flex-end"; Alignment of grid items Top, Middle or Bottom.
-          justifyContent="flex-start" // justifyContent : "flex-start" | "center" | "flex-end" | "space-between";
-          // style attribute here only used as a dev Aide.  Default height of 75% and background color lightGreen
-          // so you can see the bounds of the WRAPPING Grid. OR add --
-          // style={{ height: "100%", width:"100%", background: "lightGreen" }}
-        >
-          {/*Grid *ITEM* xs, sm, md and lg controls how much horizontal width THIS grid item and box combination will take up, out of a  maximum of 12 columns.
-            the number is how many columns to take up. Subsequent Grid  items will wrap to the next line if they  run out of room.
-            'lg' is the most common, but resize the viewport to see how the grid itrem re-draws itself in xs, sm, md dimensions.
-            lg={3} : 3/12 columns
-            lg={6} : 6/12 columns. Grid item takes up half the screen.
-            lg={12} : 12/12, full width.
-          */}
-
-          {/* MY INFO BOX 
+          {/* MY INFO BOX
           devAide: style={{ border: "1px dashed white" }} */}
-          <Grid className={utilStyles.contentIntroArea} item lg={6}>
-            <Box style={{ width: '500px', height: '800px', backgroundColor: 'blue', margin: '0 3rem 0 3rem'}}>
-                  <div className={utilStyles.contentIntro}>
+            <Box style={{ width: '500px', height: '800px', margin: '0 3rem 0 3rem'}}>
+              <div className={styles["layout__contentIntro"]}>
                 {/* <Image
                   priority
                   src="/images/githubProfile.jpg"
@@ -84,77 +63,61 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
                   alt={name}
                 /> */}
 
-           
-
-                 <h1 className={utilStyles.heading2Xl}> 
-                   AM|FM
+                <h1 className={styles["layout__heading2Xl"]}>
+                  AM|FM
                 </h1>
 
-                
-                  
-                
-                
-                <section className={utilStyles.subHeading}>
+                <div className={styles["layout__subHeading"]}>
                   {/* tech hedge wizardry */}
                   Severe Web Development +
                   Nostal-tech + Tech Hedge Wizardry +
-                  Assorted Nerdity. 
-                </section>
-                  
-                  <section>
-                    <div>-------------------------------------------------</div>
-                   + Hey! I'm Stuart Dear. + 
-                I work in Software development +
-                Everything under the JS sun and more + <br />
-                Most of the time figuring out what went wrong +<br />
-                Sometimes Carbon fiber, sometimes bondo.
-                + Peacocks on Powerlines. +
-                <div>-------------------------------------------------</div>
-                <Image
-                  priority
-                  src="/images/blah.png"
-                  className={utilStyles.borderCircle}
-                  height={1250}
-                  width={500}
-                  alt={name}
-                />
+                  Assorted Nerdity.
+                </div>
 
-                    </section>
+                <div>
+                    <div>-------------------------------------------------</div>
+                    + Yo im Stuart Dear. +
+                    I work in Software development +
+                    Everything under the JS sun and more + <br />
+                    Most of the time figuring out what went wrong +<br />
+                    Sometimes Carbon fiber, sometimes bondo.
+                    + Peacocks on Powerlines. +
+                    <div>-------------------------------------------------</div>
+                    <Image
+                      priority
+                      src="/images/blah.png"
+                      className={styles["layout__contentIntroImage"]}
+                      height={300}
+                      width={300}
+                      alt={name}
+                    />
+
+                </div>
                 </div>
             </Box>
-          </Grid>
 
 
-          {/* BLOG TITLES */}
-          {/* devAide bluebackground style={{ background: "Blue" }}
-          style={{ border: "1px dashed white" }}
-          */}
-          <Grid style={{ width: '500px'}} item lg={6}>
-          
-          
-          {/* SEARCH COMPONENT */}
-            <Box style={{ width: '100%', marginRight: '3rem', marginTop: '1rem'}}>
-            <Search />
-            <div className={utilStyles.contentBlogItems}>
-            <main>{children}</main>
+          {/* BLOG ENTRIES LIST */}
+          {/* SEARCHBOX COMPONENT */}
+
+            <div className={styles["layout__main"]}>
+              <Box style={{ width: '100%', marginRight: '3rem', marginTop: '1rem'}}>
+              <Search />
+              <div className={styles["layout__contentBlogItems"]}>
+                <div>{children}</div>
+              </div>
+              </Box>
             </div>
-            </Box>
-            <Box style={{ width: '100%', marginRight: '3rem', marginTop: '1rem'}}>
-            <Footer />
-            
-            </Box>
-            
 
-            
+            <div className={styles["layout__rightSidebar"]}>Right Sidebar</div>
 
-              
-              
-            
-            
-          </Grid>
-          
-        </Grid>
-        </div>
+            {/* BLOG FOOTER*/}
+            <div className={styles["layout__footer"]}>
+              <Box style={{ width: '100%', marginRight: '3rem', backgroundColor: 'rgb(28, 31, 35)', marginTop: '1rem'}}>
+                <Footer />
+              </Box>
+            </div>
+
           </>
         ) : (
           <>
@@ -164,24 +127,23 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
                 <Image
                   priority
                   src="/images/githubProfile.jpg"
-                  className={utilStyles.borderCircle}
+                  className={styles["layout__borderCircle"]}
                   height={108}
                   width={108}
                   alt={name}
                 />
               </a>
             </Link>
-            <h2 className={utilStyles.headingLg}>
+            <h2 className={styles["layout__headingLg"]}>
               <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
+                <a className={styles["layout__colorInherit"]}>{name}</a>
               </Link>
             </h2>
             <main>{children}</main>
-            
+
             </div>
           </>
         )}
-      </header>
       {!home && (
         <div className={styles["layout__backToHome"]}>
           <Link href="/">

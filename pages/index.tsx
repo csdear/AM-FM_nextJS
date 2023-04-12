@@ -1,5 +1,3 @@
-//  pages/index.tsx : where we show a  list of  all of our articles.
-
 import Head from 'next/head'
 import Layout, { siteTitle } from '../src/components/layout'
 import Alert from '../src/components/alert'

@@ -1,16 +1,91 @@
+@import 'styles/variables.scss';
+
+
 .layout {
 
+
   &__container {
-    // max-width: 50rem; /* Orig 36 REM */
-    // padding: 0 1rem;
-    // margin: 3rem auto 6rem;
-    /* background-color: lightcoral; */
+    // background-color: #000000;
+    // opacity: 0.8;
+    // background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #000000 40px ), repeating-linear-gradient( #f7ec4555, #f7ec45 );
+
+    // i like, but will need to fix the post page ...
+    background-color: #b22612;
+    opacity: 0.8;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #b22612 4px ), repeating-linear-gradient( #45f7c055, #45f7c0 );
+
+    //CHG1
+    display: grid;
+    grid-template: auto 1fr auto / auto 1fr auto;
+  }
+  &__contentIntro {
+    //CHG3 aka "left-side"
+    grid-column: 1 / 2;
   }
 
+  &__contentIntroImage {
+    border-radius: 9999px;
+  }
+
+
+
   &__header {
+    //CHG2
+    // padding: 2rem;
+    grid-column: 1 / 4;
+
     // display: flex;
     // flex-direction: column;  removes center aligning
     // align-items: center;
+  }
+
+  &__heading2Xl {
+    // font-family: $PermanentMarker;
+    font-family: 'ibm_vga8';
+    color: rgb(199, 232, 216);
+    font-size: 10rem;
+    line-height: 1.2;
+    // font-weight: 400;
+    letter-spacing: 0.05rem;
+    margin: 1rem 0;
+  }
+
+  &__heading2Xl:hover {
+    color: orange;
+  }
+
+  &__headingLg {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin: 1rem 0;
+  }
+
+  &__subHeading {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    // margin-left: 10rem;
+    // display: flex;
+    // justify-content: left;
+    color: $green;
+    // font-family: $RobotoCondensed;
+    // font-family: 'Web437_IBM_VGA_8x16';
+    font-family: 'ibm_vga8';
+  }
+
+  &__main {
+    //CHG4
+    grid-column: 2 / 3;
+  }
+
+  &__rightSidebar {
+    //CHG5
+    grid-column: 3 / 4;
+  }
+
+  &__footer {
+    //CHG6
+    grid-column: 1 / 4;
+    background-color: coral;
   }
 
   &__postContent {
@@ -20,8 +95,16 @@
     align-items: center;
   }
 
+  &__contentBlogItems {
+    // border: dashed red 1px;
+  }
+
   &__backToHome {
     margin: 3rem 0 0;
+  }
+
+  &__colorInherit {
+    color: inherit;
   }
 
 }

@@ -1,14 +1,9 @@
 @import './variables.scss';
 
-.contentIntroArea {
-  // experiment: infobox overlaying the header.
-  // border: 1px dashed red;
-  // position: relative;
-  // bottom: 91px;
-}
+
 
 .contentIntro {
-  // border: 1px dashed white;
+  // border: 3px dashed white;
   padding-left: 3.125rem;
 }
 
@@ -51,6 +46,7 @@
     font-size: 1.2rem;
     line-height: 1.5;
   }
+
   .subHeading {
     font-size: 1.2rem;
     line-height: 1.5;
