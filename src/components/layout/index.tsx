@@ -52,30 +52,30 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
 
           {/* MY INFO BOX
           devAide: style={{ border: "1px dashed white" }} */}
-            <Box style={{ width: '500px', height: '800px', margin: '0 3rem 0 3rem'}}>
+            <Box style={{ width: '500px', height: '450px', margin: '2rem 3rem 0 3rem'}}>
               <div className={styles["layout__contentIntro"]}>
-                {/* <Image
+                <Image
                   priority
-                  src="/images/githubProfile.jpg"
-                  className={utilStyles.borderCircle}
-                  height={144}
-                  width={144}
+                  src="/images/amfm2.jpg"
+                  // className={styles["layout__contentIntroImage"]}
+                  height={444}
+                  width={500}
                   alt={name}
-                /> */}
+                />
 
-                <h1 className={styles["layout__heading2Xl"]}>
+                {/* <h1 className={styles["layout__heading2Xl"]}>
                   AM|FM
-                </h1>
+                </h1> */}
 
                 <div className={styles["layout__subHeading"]}>
                   {/* tech hedge wizardry */}
-                  Severe Web Development +
+                  {/* Severe Web Development +
                   Nostal-tech + Tech Hedge Wizardry +
-                  Assorted Nerdity.
+                  Assorted Nerdity. */}
                 </div>
 
                 <div>
-                    <div>-------------------------------------------------</div>
+                    {/* <div>-------------------------------------------------</div>
                     + Yo im Stuart Dear. +
                     I work in Software development +
                     Everything under the JS sun and more + <br />
@@ -90,7 +90,7 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
                       height={300}
                       width={300}
                       alt={name}
-                    />
+                    /> */}
 
                 </div>
                 </div>
