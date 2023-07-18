@@ -1,5 +1,26 @@
 @import 'styles/variables.scss';
 
+$breakpointMid: 767px;
+// $breakpointSml: 859px;
+// $breakpointXSml: 638px;
+
+@mixin md {
+    @media (max-width: #{$breakpointMid}) {
+        @content;
+    }
+}
+
+// @mixin sm {
+//     @media (max-width: #{$breakpointSml}) {
+//         @content;
+//     }
+// }
+
+// @mixin x-sm {
+//     @media (max-width: #{$breakpointXSml}) {
+//         @content;
+//     }
+// }
 
 .layout {
 
@@ -73,8 +94,13 @@
   }
 
   &__main {
+    // __main contains all the posts, excerpts, dates etc.
     //CHG4
     grid-column: 2 / 3;
+
+    @include md {
+      grid-column: 1 / 1;
+  }
   }
 
   &__rightSidebar {
