@@ -1,17 +1,29 @@
 @import '../../../styles/variables.scss';
 
+$breakpoint: 390px;
+
+@mixin bp {
+    @media (max-width: #{$breakpoint}) {
+        @content;
+    }
+}
+
 .header {
     grid-column: 1 / 4;
     background-color: $charcoal;
     width: 100%;
     height: $headerHeight;
     padding: 0 1.5rem;
-    border-top: solid 1px coral;
+
     // first breakpoint
     @include breakpoint(md) {
         padding: 0 3rem;
     }
     transition: 0.3s ease all;
+
+    @include bp {
+        width: 652px;
+    }
 
 &__content {
     overflow: hidden;

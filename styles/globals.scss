@@ -10,7 +10,9 @@ body {
   margin: 0;
   font-family: 'ibm_vga8';
   color: $weakWhite;
-  background-color: $grey;
+ // background-color: $grey;
+ background-color: #b22612;
+ background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #b22612 4px ), repeating-linear-gradient( #45f7c055, #45f7c0 );
 }
 
 // root needed?

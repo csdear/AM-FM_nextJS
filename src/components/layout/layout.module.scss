@@ -31,13 +31,12 @@ $breakpointMid: 767px;
     // background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #000000 40px ), repeating-linear-gradient( #f7ec4555, #f7ec45 );
 
     // i like, but will need to fix the post page ...
-    background-color: #b22612;
-    opacity: 0.8;
-    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #b22612 4px ), repeating-linear-gradient( #45f7c055, #45f7c0 );
 
     //CHG1
     display: grid;
     grid-template: auto 1fr auto / auto 1fr auto;
+
+
   }
   &__contentIntro {
     //CHG3 aka "left-side"
