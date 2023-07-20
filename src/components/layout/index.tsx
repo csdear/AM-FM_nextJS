@@ -52,12 +52,12 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
 
           {/* MY INFO BOX
           devAide: style={{ border: "1px dashed white" }} */}
-            <Box style={{ width: '500px', height: '450px', margin: '2rem 3rem 0 3rem'}}>
+            <Box style={{ width: '500px', height: '450px', margin: '2rem 3rem 0 3rem', backgroundColor: 'initial'}}>
               <div className={styles["layout__contentIntro"]}>
                 <Image
                   priority
                   src="/images/amfm2.jpg"
-                  // className={styles["layout__contentIntroImage"]}
+                  className={styles["layout__contentIntroImage"]}
                   height={444}
                   width={500}
                   alt={name}
@@ -101,15 +101,18 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
           {/* SEARCHBOX COMPONENT */}
 
             <div className={styles["layout__main"]}>
-              <Box style={{ width: '100%', marginRight: '3rem', marginTop: '1rem'}}>
+
+              <Box style={{ width: '80%', marginRight: '3rem', marginTop: '3rem'}}>
               <Search />
               <div className={styles["layout__contentBlogItems"]}>
                 <div>{children}</div>
               </div>
               </Box>
+
             </div>
 
-            <div className={styles["layout__rightSidebar"]}>Right Sidebar</div>
+            {/* Keeping for retention... this is the RIGHT SIDEbar, who know might want one some day.... part of the orginal holy grail layout.
+             <div className={styles["layout__rightSidebar"]}>Right Sidebar</div>*/}
 
             {/* BLOG FOOTER*/}
             <div className={styles["layout__footer"]}>

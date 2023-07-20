@@ -38,13 +38,24 @@ $breakpointMid: 767px;
 
 
   }
+
   &__contentIntro {
     //CHG3 aka "left-side"
     grid-column: 1 / 2;
+    // position: relative;
+    // left: 50px;
+
+    @include md {
+      position: relative;
+      left: 30px;
+
+    }
   }
 
   &__contentIntroImage {
-    border-radius: 9999px;
+    // border-radius: 9999px;
+    // For the responsive image within this container
+
   }
 
 
@@ -97,10 +108,21 @@ $breakpointMid: 767px;
     //CHG4
     grid-column: 2 / 3;
 
+
+
     @include md {
       grid-column: 1 / 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      left: 3.5rem;
+    }
+
   }
-  }
+
+
+
 
   &__rightSidebar {
     //CHG5
@@ -121,7 +143,7 @@ $breakpointMid: 767px;
   }
 
   &__contentBlogItems {
-    // border: dashed red 1px;
+    // border: dashed white 3px;
   }
 
   &__backToHome {
