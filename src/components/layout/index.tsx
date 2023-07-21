@@ -116,7 +116,7 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
 
             {/* BLOG FOOTER*/}
             <div className={styles["layout__footer"]}>
-              <Box style={{ width: '100%', marginRight: '3rem', backgroundColor: 'rgb(28, 31, 35)', marginTop: '1rem'}}>
+              <Box style={{ marginRight: '3rem', backgroundColor: 'initial', marginTop: '1rem'}}>
                 <Footer />
               </Box>
             </div>

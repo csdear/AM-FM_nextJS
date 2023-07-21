@@ -1,5 +1,6 @@
 @import '../../../styles/variables.scss';
 
+//sus.. bug?
 $breakpoint: 390px;
 
 @mixin bp {
@@ -23,7 +24,10 @@ $breakpoint: 390px;
 
     @include bp {
         width: 652px;
+
     }
+
+
 
 &__content {
     overflow: hidden;
@@ -69,6 +73,12 @@ $breakpoint: 390px;
             width: auto;
             height: 100%;
             position: static;
+        }
+
+        @include bp {
+            // border: solid blue 25px;
+            // bug. iphone 12.  essentially if on tap of the hamburger icon I could right: 0% the menu would display.
+            // right: 0%;
         }
         ul {
             list-style: none;

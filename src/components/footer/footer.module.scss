@@ -1,7 +1,20 @@
 @import '../../../styles/variables.scss';
 
+$breakpointMid: 767px;
+// $breakpointSml: 859px;
+// $breakpointXSml: 638px;
+
+@mixin md {
+    @media (max-width: #{$breakpointMid}) {
+        @content;
+    }
+}
+
 .separator {
+    border: 5px white dashed;
     margin-block-start: 0px;
+    margin-inline-start: 250px;
+    width: 600px;
     /* Content is centered horizontally */
     align-items: start;
     display: flex;
@@ -13,8 +26,15 @@
     //     background-color: red;
     // }
 
+    @include md {
+        margin-inline-start: 20px;
+    }
+
     &__media {
-        margin-inline-start: 200px;
+
+    @include md {
+        margin-inline-start: 20px;
+    }
 
     &:hover {
         cursor: pointer;
