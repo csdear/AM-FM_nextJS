@@ -86,9 +86,10 @@ $breakpointMid: 767px;
   }
 
   &__headingLg {
+    // the header on the blog post page.
     font-size: 1.5rem;
     line-height: 1.4;
-    margin: 1rem 0;
+    // margin: 1rem 0;
   }
 
   &__subHeading {
@@ -143,16 +144,33 @@ $breakpointMid: 767px;
     align-items: center;
   }
 
+  &__postMain {
+    margin: 0px 100px 100px 100px;
+    background-color: $charcoal;
+
+    article {
+      margin: 70px 30px 30px 30px;
+    }
+
+  }
+
   &__contentBlogItems {
     // border: dashed white 3px;
   }
 
-  &__backToHome {
-    margin: 3rem 0 0;
-  }
-
   &__colorInherit {
     color: inherit;
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
   }
+
+  &__backToHome {
+    // margin: 3rem 0 0;
+    font-size: 0.9rem;
+    margin-block-end: 50px;
+  }
+
+
 
 }

@@ -122,10 +122,10 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
             </div>
 
           </>
-        ) : (
+        ) : (  // is blog post page.
           <>
           <div className={styles["layout__postContent"]}>
-            <Link href="/">
+            {/* <Link href="/">
               <a>
                 <Image
                   priority
@@ -136,24 +136,27 @@ const Layout: FC<LayoutProps> = ({ children, home }) => {
                   alt={name}
                 />
               </a>
-            </Link>
+            </Link> */}
             <h2 className={styles["layout__headingLg"]}>
               <Link href="/">
-                <a className={styles["layout__colorInherit"]}>{name}</a>
+                <a className={styles["layout__colorInherit"]}>AM|FM</a>
               </Link>
             </h2>
-            <main>{children}</main>
+            {!home && (
+                <div className={styles["layout__backToHome"]}>
+                  <Link href="/">
+                    <a>← Back to home</a>
+                  </Link>
+                </div>
+              )}
+            <div className={styles["layout__postMain"]}>
+              <main>{children}</main>
+            </div>
 
             </div>
           </>
         )}
-      {!home && (
-        <div className={styles["layout__backToHome"]}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
+
     </div>
     </div>
   )
